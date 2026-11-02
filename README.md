@@ -27,18 +27,15 @@ string capitalizeName(const string& s)
 int main()
 {
     setlocale(LC_ALL, "Russian");
-
     string line;
     cout << "Введите количество инициалов: ";
     getline(cin, line);
     int kol = stoi(line);
     vector<string> zhurnal(kol);
-
     cout << "Введите фамилии и имена:\n";
     for (int i = 0; i < kol; i++)
     {
         getline(cin, zhurnal[i]);
-
         string fixed = capitalizeName(zhurnal[i]);
         if (fixed != zhurnal[i])
         {
@@ -46,7 +43,6 @@ int main()
             zhurnal[i] = fixed;
         }
     }
-
     for (int i = 0; i < kol - 1; i++)
     {
         bool swapped = false;
@@ -60,7 +56,6 @@ int main()
         }
         if (!swapped) break;
     }
-
     cout << "Вы ввели (в алфавитном порядке):\n";
     for (int i = 0; i < kol; i++)
         cout << zhurnal[i] << "\n";
