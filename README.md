@@ -8,11 +8,10 @@ string capitalizeName(const string& s)
 {
     string result = s;
     bool newWord = true;
-
     for (size_t i = 0; i < result.size(); i++)
     {
         if (result[i] == ' ')
-        {
+     {
             newWord = true;
         }
         else if (newWord)
@@ -21,7 +20,7 @@ string capitalizeName(const string& s)
                 result[i] = result[i] - 32;   
             newWord = false;
         }
-    }
+        }
     return result;
 }
 int main()
